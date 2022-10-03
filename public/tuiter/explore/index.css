@@ -1,0 +1,39 @@
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: lightgray;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: lightgray;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: lightgray;
+}
+
+.wd-grid-col-onesixth-page { width: 16%; float: left; }
+
+.wd-boarder {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(47,51,54);
+}
+
+.wd-hidden-boarder {
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+  border-bottom-color: #1da1f2;
+}
+
+.wd-rounded-corners-pic { border-radius: 20px;}
+
+.wd-round-pic { border-radius: 20px;}
+
+.wd-float-left { float: left;}
+.wd-float-right { float: right;}
+.wd-float-done { clear: both;}
+
+.wd-padding-fat { padding: 16px;}
+
+.wd-container {display: flex;}
