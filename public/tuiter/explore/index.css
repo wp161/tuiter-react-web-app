@@ -37,3 +37,46 @@
 .wd-padding-fat { padding: 16px;}
 
 .wd-container {display: flex;}
+
+.wd-stacked-icon {
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+}
+
+@media (min-width: 1200px) and
+(max-width:1400px)
+{
+  .wd-col-xl-customize {
+    flex: 0 0 auto;
+    width: 200px;
+  }
+}
+
+
+@media (min-width: 768px) and
+(max-width:992px)
+{
+  .wd-col-md-customize {
+    flex: 0 0 auto;
+    width: 80px;
+  }
+}
+
+@media (min-width: 576px) and
+(max-width:768px)
+{
+  .wd-col-sm-customize {
+    flex: 0 0 auto;
+    width: 80px;
+  }
+}
+
+@media (min-width: 0px) and
+(max-width:576px)
+{
+  .wd-col-xs-customize {
+    flex: 0 0 auto;
+    width: 80px;
+  }
+}
