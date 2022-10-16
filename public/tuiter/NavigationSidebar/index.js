@@ -111,4 +111,8 @@ const NavigationSidebar = (active) => {
 	// `)
 }
 
+$('#navigation-sidebar').append(`
+	${NavigationSidebar("Explore")}
+`);
+
 export default NavigationSidebar;
