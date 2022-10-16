@@ -3,6 +3,7 @@ var currentActiveTab = null;
 const NavigationSidebar = (active) => {
 	const tabs = ["Home", "Explore", "Notifications","Messages", "Bookmarks","Lists", "Profile", "More"];
 	const icon_class = ["fa-house","fa-hashtag", "fa-bell", "fa-envelope", "fa-bookmark", "fa-list", "fa-user"]
+
 	let html = ""
 	currentActiveTab = active;
 	for(let i = 0 ; i < tabs.length ;i++) {
@@ -26,7 +27,8 @@ const NavigationSidebar = (active) => {
 						<i class="fa-solid fa-ellipsis fa-stack-1x"
 						   style="color: black"></i>
 					</span>
-				<span class="d-none d-xl-inline-flex d-xxl-inline-flex">More
+					<span class="d-none d-xl-inline-flex d-xxl-inline-flex">
+						More
 					</span>
 			</a>
 `
@@ -108,18 +110,5 @@ const NavigationSidebar = (active) => {
 	// 		</button>
 	// `)
 }
-
-// console.log(NavigationSidebar("Explore"))
-$('#navigation-sidebar').append(`
-	${NavigationSidebar("Explore")}
-`);
-
-// const links = $('a');
-//
-// for (let i = 0 ; i < links.length; i++) {
-// 	links[i].click( () => {
-// 		console.log("asdasdasd");
-// 	})
-// }\\
 
 export default NavigationSidebar;
