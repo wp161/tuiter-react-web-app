@@ -1,0 +1,63 @@
+.wd-tabs li {
+  display: inline;
+}
+
+.wd-tabs {
+  padding-left: 0px;
+}
+
+.wd-selected {
+  border-bottom: 2px blue solid;
+  padding-bottom: 20px;
+}
+
+.wd-nudge-up {
+  bottom: 18px;
+  left: 25px;
+}
+
+.wd-bottom-2 {
+  bottom: 2px;
+}
+
+.wd-bottom-4 {
+  bottom: 4px;
+}
+
+
+
+@media (min-width: 1200px) and
+(max-width:1400px)
+{
+  .wd-col-xl-customize {
+    flex: 0 0 auto;
+    width: 200px  !important;
+  }
+}
+
+@media (min-width: 768px) and
+(max-width:992px)
+{
+  .wd-col-md-customize {
+    flex: 0 0 auto;
+    width: 80px  !important;
+  }
+}
+
+@media (min-width: 576px) and
+(max-width:768px)
+{
+  .wd-col-sm-customize {
+    flex: 0 0 auto;
+    width: 80px !important;
+  }
+}
+
+@media (min-width: 0px) and
+(max-width:576px)
+{
+  .wd-col-xs-customize {
+    flex: 0 0 auto;
+    width: 80px  !important;
+  }
+}

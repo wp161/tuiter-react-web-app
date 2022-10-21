@@ -30,7 +30,7 @@ const setUpNavTriggers = () => {
 		$(tabs[i]).click(() => {
 			let children = $(tabs[i]).children();
 			let selectedTab = $(children[1]).html().trim();
-			console.log(selectedTab);
+			// console.log(selectedTab);
 			// console.log($(span).innerHTML + " is clicked");
 			$("#my-nav-bar").html(NavigationSidebar(selectedTab))
 			setUpNavTriggers();
