@@ -113,6 +113,7 @@ const PostItem = ({post}) => {
              	
 {/*Content Column-->*/}
 				<div style={{flex: "1"}}>
+				
 {/*Title and comment-->*/}
 					<div className="fw-bolder">
                     	{post.userName}
