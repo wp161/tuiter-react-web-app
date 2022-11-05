@@ -1,5 +1,5 @@
 import React from "react";
-const WhoToFollowListItem = (
+const WhoToFollowItem = (
 	{
 		who = { userName: 'NASA', handle: 'NASA', avatarIcon: 'nasa.png' }
 	}
@@ -49,4 +49,4 @@ const WhoToFollowListItem = (
 	// </li>
 	);
 };
-export default WhoToFollowListItem;
+export default WhoToFollowItem;

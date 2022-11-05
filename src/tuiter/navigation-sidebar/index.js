@@ -6,14 +6,13 @@ import {useLocation} from "react-router";
 
 
 const NavigationSidebar = (
-	// {
-	// 	active = 'explore'
-	//
-	// }
+	{
+		active
+	}
 ) => {
 	const {pathname} = useLocation();
 	const paths = pathname.split('/')
-	let active = 'explore'
+	// let active = 'explore'
 	// I followed the requirement of previous assignments and set explore component as the default page
 	// 	(http://localhost:3000/tuiter/ will displays the explore component with "explore" tab selected from the navigation bar)
 	if(paths.length > 2 && paths[2] != ''){

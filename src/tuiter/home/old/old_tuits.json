@@ -1,6 +1,6 @@
 [
   {
-    "post_id": "001",
+    "tuit_id": "001",
     "userName": "Elon Musk",
     "handle": "elonmusk",
     "avatar_path": "../../images/elonmusk.jpg",
@@ -12,12 +12,12 @@
     "mentioned": " @Inspiration 4x ",
     "mentioned_position": 19,
     "url": "netflix.com",
-    "reply_count": "4.2k",
-    "retuit_count": "3.5k",
-    "liked_count": "37.5k"
+    "replies": "4.2k",
+    "retuits": "3.5k",
+    "likes": "37.5k"
   },
   {
-    "post_id": "002",
+    "tuit_id": "002",
     "userName": "New York Post",
     "handle": "nypost",
     "avatar_path": "../../images/thenewyorkpost.png",
@@ -29,8 +29,8 @@
     "mentioned": " trib.al/nx2Gfaq ",
     "mentioned_position": 80,
     "url": "",
-    "reply_count": "965",
-    "retuit_count": "2.4k",
-    "liked_count": "4k"
+    "replies": "965",
+    "retuits": "2.4k",
+    "likes": "4k"
   }
 ]

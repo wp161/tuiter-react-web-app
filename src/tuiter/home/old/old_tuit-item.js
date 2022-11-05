@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.css"
+import "../index.css"
 
 const GetComment = ({comment, mentioned, position}) => {
 	return [
@@ -76,23 +76,24 @@ const GetPanel = ({img, ttl, ctnt, link}) => {
 	}
 }
 
-const GetStats = ({reply, retuit, like}) => {
+const TuitStats = ({replies, retuits, likes, liked}) => {
 	return (
 			<div className="row flex-nowrap p-3">
                 <div className="col-3">
                 	<i className="fa-regular fa-comment text-secondary fs-6"></i>
                     <span className="ps-2 text-secondary"
-                    style={{"verticalAlign": "top"}}> {reply} </span>
+                    style={{"verticalAlign": "top"}}> {replies} </span>
                 </div>
                 <div className="col-3">
                 	<i className="fa-solid fa-retweet text-secondary fs-6"></i>
                     <span className="ps-2 text-secondary"
-                    style={{"verticalAlign": "top"}}> {retuit} </span>
+                    style={{"verticalAlign": "top"}}> {retuits} </span>
                 </div>
                 <div className="col-3">
-                	<i className="fa-regular fa-heart text-secondary fs-6"></i>
+	                {liked && <i className="fa-regular fa-heart text-secondary fs-6 text-danger"></i>}
+	                {!liked && <i className="fa-regular fa-heart text-secondary fs-6"></i>}
                     <span className="ps-2 text-secondary"
-                    style={{"verticalAlign": "top"}}> {like} </span>
+                    style={{"verticalAlign": "top"}}> {likes} </span>
                 </div>
                 <div className="col-3">
                 	<i className="fa-solid fa-arrow-up-from-bracket fs-6 text-secondary"></i>
@@ -101,14 +102,14 @@ const GetStats = ({reply, retuit, like}) => {
 	)
 }
 
-const PostItem = ({post}) => {
+const TuitItem = ({tuit: tuit}) => {
 	return (
 		<li className="list-group-item">
 			<div style={{display: "flex"}}>
 {/*User Profile Pic Column*/}
 				<div className=" wd-col-customize-2">
                 	<img className="rounded-circle"
-                		src={post.avatar_path} height="40px"/>
+	                     src={tuit.avatar_path} height="40px"/>
              	</div>
              	
 {/*Content Column-->*/}
@@ -116,12 +117,12 @@ const PostItem = ({post}) => {
 				
 {/*Title and comment-->*/}
 					<div className="fw-bolder">
-                    	{post.userName}
+                    	{tuit.userName}
 						&nbsp;
-						<i className="fa-solid fa-circle-check"></i>
+						<i className="fa-solid fa-circle-check text-primary"></i>
 						&nbsp;
                         <span className="text-secondary fw-normal">
-                        	{post.handle} · {post.time}
+                        	@{tuit.handle} · {tuit.time}
                         </span>
                         
                         <span className="float-end pe-2"
@@ -131,22 +132,22 @@ const PostItem = ({post}) => {
                     </div>
                     <div>
                     	<GetComment
-		                    comment = {post.comment}
-		                    mentioned = {post.mentioned}
-	                    position= {post.mentioned_position}/>
+		                    comment = {tuit.comment}
+		                    mentioned = {tuit.mentioned}
+	                    position= {tuit.mentioned_position}/>
                     </div>
                     
 {/*Picture and url-->*/}
 		        <GetPanel
-			        img = {post.image}
-			        ttl = {post.title}
-			        ctnt = {post.content}
-			        link = {post.url}/>
+			        img = {tuit.image}
+			        ttl = {tuit.title}
+			        ctnt = {tuit.content}
+			        link = {tuit.url}/>
 
-				<GetStats
-					reply = {post.reply_count}
-					retuit = {post.retuit_count}
-					like = {post.liked_count}/>
+				<TuitStats
+					replies= {tuit.reply_count}
+					retuits= {tuit.retuit_count}
+					likes= {tuit.liked_count}/>
                 </div>
             </div>
         </li>
@@ -154,4 +155,4 @@ const PostItem = ({post}) => {
 }
 
 
-export default PostItem;
+export default TuitItem;
