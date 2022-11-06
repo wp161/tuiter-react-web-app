@@ -44,7 +44,7 @@ const EditProfileComponent = () => {
 	
 	return (
 		<>
-			<div className="border list-group wd-border">
+			<div className="border list-group wd-border mb-5">
 				{/*Title, close button, and save button */}
 				<div className="row mb-3 mt-3">
 					<div className="col-2">
@@ -130,7 +130,7 @@ const EditProfileComponent = () => {
 					</label>
 					
 					{/*Birthdate*/}
-					<div className="ms-1 mb-3 wd-small-font text-secondary">
+					<div className="ms-1 mb-1 wd-small-font text-secondary">
 						Birth date · &nbsp;
 						<span className="text-primary"
 						onClick={ClickEditHandler}>
@@ -144,7 +144,9 @@ const EditProfileComponent = () => {
 							{currentDOB}
 						</div>
 					</div>
-				
+					<div className="mb-5 fs-5">
+						Switch to professional
+					</div>
 				</div>
 			</div>
 		</>
