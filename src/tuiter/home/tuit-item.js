@@ -42,7 +42,7 @@ const TuitItem = ({tuit: tuit}) => {
 				{/*User Profile Pic Column*/}
 				<div className=" wd-col-customize-2">
 					<img className="rounded-circle"
-					     src={tuit.avatar_path} height="40px"/>
+					     src={tuit.image} height="40px"/>
 				</div>
 				
 				{/*Content Column-->*/}

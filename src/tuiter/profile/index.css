@@ -1,0 +1,80 @@
+.wd-no-padding{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.wd-border{
+  border-radius: 0.375rem;
+}
+
+.wd-pos-relative {
+  position: relative; }
+
+.input
+{
+  width:100%;
+  border:0px solid;
+  outline:none
+}
+.wd-small-font {
+  font-size: 0.85rem !important;
+}
+
+@media (min-width: 1200px) and
+(max-width:1400px)
+{
+  .wd-profile-position-xl {
+    position: absolute;
+    bottom: -28%;
+    left: 20px
+  }
+}
+
+@media (min-width: 1400px)
+{
+  .wd-profile-position-xxl {
+    position: absolute;
+    bottom: -24%;
+    left: 20px
+  }
+}
+
+@media (min-width: 768px) and
+(max-width:1200px)
+{
+  .wd-profile-position-l {
+    position: absolute;
+    bottom: -80px;
+    left: 20px
+  }
+}
+
+@media (min-width: 768px) and
+(max-width:992px)
+{
+  .wd-profile-position-m {
+    position: absolute;
+    bottom: -80px;
+    left: 20px
+  }
+}
+
+@media (min-width: 576px) and
+(max-width:768px)
+{
+  .wd-profile-position-sm {
+    position: absolute;
+    bottom: -80px;
+    left: 20px
+  }
+}
+
+@media (min-width: 0px) and
+(max-width:576px)
+{
+  .wd-profile-position-xs {
+    position: absolute;
+    bottom: -80px;
+    left: 20px
+  }
+}

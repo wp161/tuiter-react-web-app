@@ -13,6 +13,7 @@ const WhatsHappening = () => {
 			content: whatsHappening
 		}
 		dispatch(createTuit(content));
+		setWhatsHappening("")
 	}
 	
 	
@@ -32,11 +33,11 @@ const WhatsHappening = () => {
 						Tuit
 					</button>
 					<div className="text-primary fs-5 pt-3">
-						<i className="bi bi-card-image me-3"></i>
-						<i className="bi bi-filetype-gif me-3"></i>
-						<i className="bi bi-bar-chart me-3"></i>
-						<i className="bi bi-emoji-smile me-3"></i>
-						<i className="bi bi-geo-alt"></i>
+						<i className="bi bi-card-image me-3"/>
+						<i className="bi bi-filetype-gif me-3"/>
+						<i className="bi bi-bar-chart me-3"/>
+						<i className="bi bi-emoji-smile me-3"/>
+						<i className="bi bi-geo-alt"/>
 					</div>
 				</div>
 			</div>

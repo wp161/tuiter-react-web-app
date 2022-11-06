@@ -4,7 +4,7 @@ import tuits from '../data/tuits.json';
 const currentUser = {
 	"userName": "NASA",
 	"handle": "@nasa",
-	"avatar_path": "nasa.png",
+	"image": "/images/nasa.png",
 };
 
 const templateTuit = {
@@ -22,28 +22,22 @@ const tuitsSlice = createSlice({
 	initialState: tuits,
 	reducers: {
 		createTuit(state, action) {
+			// console.log(action)
 			const newTuit = {
 				...action.payload,
 				...templateTuit,
-				"tuit_id": (new Date()).getTime(),
+				"_id": (new Date()).getTime(),
 			}
-			console.log(newTuit)
-			console.log(tuits)
-			state.push(newTuit)
-			console.log(tuits)
-			// state.unshift({
-			// 	...action.payload,
-			// 	...templateTuit,
-			// 	_id: (new Date()).getTime(),
-			// })
+			// console.log(newTuit)
+			state.unshift(newTuit)
 		},
+		
 		deleteTuit(state, action) {
 			const index = state
 				.findIndex(tuit =>
 					tuit._id === action.payload);
 			state.splice(index, 1);
 		},
-		
 	}
 });
 
