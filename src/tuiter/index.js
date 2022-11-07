@@ -11,7 +11,7 @@ import HomeComponent from "./home";
 import {configureStore} from "@reduxjs/toolkit";
 import whoReducer from "./reducers/who-reducer";
 import {Provider} from "react-redux";
-import postsReducer from "./reducers/summary-reducer";
+// import postsReducer from "./reducers/summary-reducer";
 import tuitsReducer from "./reducers/tuits-reducer";
 import ProfileComponent from "./profile";
 import profileReducer from "./reducers/profile-reducer";
@@ -21,7 +21,7 @@ const store = configureStore(
 	{
 		reducer: {
 			who: whoReducer,
-			posts: postsReducer,
+			// posts: postsReducer,
 			tuits: tuitsReducer,
 			profile: profileReducer
 		}

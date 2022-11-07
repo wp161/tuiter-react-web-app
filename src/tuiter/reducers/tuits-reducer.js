@@ -28,7 +28,7 @@ const tuitsSlice = createSlice({
 				...templateTuit,
 				"_id": (new Date()).getTime(),
 			}
-			// console.log(newTuit)
+			console.log(newTuit)
 			state.unshift(newTuit)
 		},
 		
