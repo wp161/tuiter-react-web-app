@@ -2,29 +2,68 @@ import React from "react";
 import "./index.css"
 import {useDispatch} from "react-redux";
 import {deleteTuit} from "../reducers/tuits-reducer";
+import {deleteTuitThunk, updateTuitThunk} from "../../services/tuits-thunks";
 
-const TuitStats = ({replies, retuits, likes, liked}) => {
+const TuitStats = ({tuit}) => {
+	const dispatch = useDispatch();
+	
 	return (
 		<div className="row flex-nowrap pt-2">
+			{/*replies*/}
 			<div className="col-3">
 				<i className="fa-regular fa-comment  fs-6 fw-light"/>
 				<span className="ps-2 "
-				      style={{"verticalAlign": "top"}}> {replies} </span>
+				      style={{"verticalAlign": "top"}}> {tuit.replies} </span>
 			</div>
+			{/*retuits*/}
 			<div className="col-3">
 				<i className="fa-solid fa-arrows-rotate  fs-6"/>
 				<span className="ps-2 "
-				      style={{"verticalAlign": "top"}}> {retuits} </span>
+				      style={{"verticalAlign": "top"}}> {tuit.retuits} </span>
 			</div>
+			{/*likes*/}
 			<div className="col-3">
-				{liked && <i className="fa-solid fa-heart  fs-6 text-danger"/>}
-				{!liked && <i className="fa-regular fa-heart  fs-6 fw-light"/>}
+				{/*cancel like*/}
+				{tuit.liked && <i onClick={() => dispatch(updateTuitThunk({
+					...tuit,
+					likes: tuit.likes - 1,
+					liked: false,
+				}))}
+					className="fa-solid fa-heart  fs-6 text-danger"/>}
+				{/*likes a tuit*/}
+				{!tuit.liked && <i onClick={() => dispatch(updateTuitThunk({
+					...tuit,
+					likes: tuit.likes + 1,
+					liked: true,
+				}))}
+					className="fa-regular fa-heart  fs-6 fw-light"/>}
 				<span className="ps-2 "
-				      style={{"verticalAlign": "top"}}> {likes} </span>
+				      style={{"verticalAlign": "top"}}> {tuit.likes} </span>
 			</div>
+			{/*dislikes*/}
 			<div className="col-3">
-				<i className="fa-solid fa-arrow-up-from-bracket fs-6 "/>
+				{/*cancel dislike*/}
+				{tuit.disliked && <i onClick={() => dispatch(updateTuitThunk({
+					...tuit,
+					dislikes: tuit.dislikes - 1,
+					disliked: false,
+				}))}
+				                  className="fa-regular fa-thumbs-down  fs-6 text-primary"/>}
+				{/*dislike a tuit*/}
+				{!tuit.disliked && <i onClick={() => dispatch(updateTuitThunk({
+					...tuit,
+					dislikes: tuit.dislikes + 1,
+					disliked: true,
+				}))}
+				                   className="fa-regular fa-thumbs-down  fs-6 fw-light"/>}
+				{/*<i className="fa-regular fa-thumbs-down fs-6 "/>*/}
+				<span className="ps-2 "
+				      style={{"verticalAlign": "top"}}> {tuit.dislikes} </span>
 			</div>
+			{/*share*/}
+			{/*<div className="col-3">*/}
+			{/*	<i className="fa-solid fa-arrow-up-from-bracket fs-6 "/>*/}
+			{/*</div>*/}
 		</div>
 	)
 }
@@ -33,7 +72,8 @@ const TuitItem = ({tuit: tuit}) => {
 	
 	const dispatch = useDispatch();
 	const deleteTuitHandler = (id) => {
-		dispatch(deleteTuit(id));
+		// dispatch(deleteTuit(id));
+		dispatch(deleteTuitThunk(id));
 	}
 	
 	return (
@@ -66,10 +106,11 @@ const TuitItem = ({tuit: tuit}) => {
 					{tuit.content}
 					
 					<TuitStats
-						replies= {tuit.replies}
-						retuits= {tuit.retuits}
-						likes= {tuit.likes}
-						liked= {tuit.liked}/>
+						tuit={tuit}/>
+						{/*replies= {tuit.replies}*/}
+						{/*retuits= {tuit.retuits}*/}
+						{/*likes= {tuit.likes}*/}
+						{/*liked= {tuit.liked}/>*/}
 				</div>
 			</div>
 		</li>
