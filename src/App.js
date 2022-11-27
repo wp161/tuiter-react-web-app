@@ -3,10 +3,8 @@ import Labs from "./labs";
 import HelloWorld from "./labs/a6/hello-world";
 import Tuiter from "./tuiter";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {API_PATH} from "./services/tuits-service";
 
 function App() {
-    console.log(API_PATH)
   return (
       <BrowserRouter>
         <div className="container">
